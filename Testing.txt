@@ -1,3 +1,4 @@
+<div></div>
 <div class="dialog-header-page">
     <h2>
         {{ 'Company Info' | translate }}
