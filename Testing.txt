@@ -1,5 +1,11 @@
 <div></div>
 izwan
+    <ol class="breadcrumb text-right">
+        <li><a routerLink="/">{{ 'COMMON.BREADCRUMB_HOME' | translate }}</a></li>
+        <li><a routerLink="{{dialogAppCommonService.buildUrl('/company-info')}}">{{ 'Company Info' | translate }}</a></li>
+        <li class="active">{{ 'Edit' | translate }}</li>
+    </ol>
+</div>
 <div class="content system-info-page mb-5">
     <div class="animated fadeIn dialog-page-content dialog-page-content-with-tabs dialog-form">
         <mat-tab-group mat-stretch-tabs class="system-info-tabs" (selectedIndexChange)="selectedTabChanged()" [selectedIndex]="isConfigurationActive ? 1 : 0">
