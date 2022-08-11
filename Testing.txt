@@ -1,16 +1,5 @@
 <div></div>
-<div class="dialog-header-page">
-    <h2>
-        {{ 'Company Info' | translate }}
-        <img onclick="dialogToggleTooltipHeader()" src="/assets/svg/BlueIcon16x16/Information.svg" class="font-18" matTooltip="{{ 'This allows management of company information, including contact list' | translate }}" [matTooltipPosition]="'above'">
-        <span class="title-header-mobile">{{ 'OBJECTIVE.COMPANY_INFO' | translate }}</span>
-    </h2>
-    <ol class="breadcrumb text-right">
-        <li><a routerLink="/">{{ 'COMMON.BREADCRUMB_HOME' | translate }}</a></li>
-        <li><a routerLink="{{dialogAppCommonService.buildUrl('/company-info')}}">{{ 'Company Info' | translate }}</a></li>
-        <li class="active">{{ 'Edit' | translate }}</li>
-    </ol>
-</div>
+izwan
 <div class="content system-info-page mb-5">
     <div class="animated fadeIn dialog-page-content dialog-page-content-with-tabs dialog-form">
         <mat-tab-group mat-stretch-tabs class="system-info-tabs" (selectedIndexChange)="selectedTabChanged()" [selectedIndex]="isConfigurationActive ? 1 : 0">
