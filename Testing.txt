@@ -1,0 +1,39 @@
+<div class="dialog-header-page">
+    <h2>
+        {{ 'Company Info' | translate }}
+        <img onclick="dialogToggleTooltipHeader()" src="/assets/svg/BlueIcon16x16/Information.svg" class="font-18" matTooltip="{{ 'This allows management of company information, including contact list' | translate }}" [matTooltipPosition]="'above'">
+        <span class="title-header-mobile">{{ 'OBJECTIVE.COMPANY_INFO' | translate }}</span>
+    </h2>
+    <ol class="breadcrumb text-right">
+        <li><a routerLink="/">{{ 'COMMON.BREADCRUMB_HOME' | translate }}</a></li>
+        <li><a routerLink="{{dialogAppCommonService.buildUrl('/company-info')}}">{{ 'Company Info' | translate }}</a></li>
+        <li class="active">{{ 'Edit' | translate }}</li>
+    </ol>
+</div>
+<div class="content system-info-page mb-5">
+    <div class="animated fadeIn dialog-page-content dialog-page-content-with-tabs dialog-form">
+        <mat-tab-group mat-stretch-tabs class="system-info-tabs" (selectedIndexChange)="selectedTabChanged()" [selectedIndex]="isConfigurationActive ? 1 : 0">
+            <mat-tab label="{{ 'Company Info' | translate }}">
+                <dialog-tenant-company [isCompanyInfo]="true" [isEditPackagePlan]="false" [showstatus]="true" [disabletatus]="true" [itemToEdit]="company" (valueChange)='formChange($event)' [formMode]="'update'" [titleModal]="'Create Company'">
+                </dialog-tenant-company>
+                <div class="listing-action text-right mt-3" *ngIf="isShowButtonFooter">
+                    <a title="{{ 'COMMON.BUTTON.CANCEL' | translate }}" class="btn dialog-btn-fw btn-secondary  text-center" routerLink="{{dialogAppCommonService.buildUrl('/company-info')}}">{{ 'COMMON.BUTTON.CANCEL' | translate }}</a>&nbsp;
+                    <button title="{{ 'COMMON.BUTTON.SAVE' | translate }}" class="btn dialog-btn-fw btn-primary text-center" type="button" (click)="submit()">{{ 'COMMON.BUTTON.SAVE' | translate }}</button>
+                    <div class="clearfix"></div>
+                </div>
+            </mat-tab>
+            <!-- <mat-tab label="{{ 'COMPANY_INFO.TAB_CONFIGURATION' | translate }}">
+                <div class="card-body dialog-box-border mb-4">
+                    <company-configuration [editMode]="true"></company-configuration>
+                </div>
+                <div class="card-body dialog-box-border mb-4">
+                    <smtp-setting [editMode]="true"></smtp-setting>
+                </div>
+                <div class="card-body dialog-box-border">
+                    <company-approval-flow [editMode]="true"></company-approval-flow>
+                </div>
+            </mat-tab> -->
+        </mat-tab-group>
+    </div>
+
+</div>
